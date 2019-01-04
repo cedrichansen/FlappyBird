@@ -9,7 +9,7 @@ function setup() {
     bg = loadImage("background.jpg");
     createCanvas(400 , 600);
     bird = new Bird();
-    pipes.push(new PipePair())
+    pipes.push(new PipePair());
 
 
 }
@@ -40,7 +40,7 @@ function draw() {
     bird.show();
 
     if (frameCount % 100 == 0 && !gameOver) {
-        pipes.push(new PipePair())
+        pipes.push(new PipePair());
         score++;
         console.log(score);
     }

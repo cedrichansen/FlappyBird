@@ -3,8 +3,7 @@ var bottomPipeimg;
 
 function PipePair() {
 
-    //
-    // topPipeimg = loadImage()
+    topPipeimg = loadImage("topPipe.png");
     bottomPipeimg = loadImage("bottomPipe.png");
     this.gap = 150;
 
@@ -13,8 +12,11 @@ function PipePair() {
 
 
     this.x = width;
-    this.w = 20;
+    this.w = 40;
     this.speed = 3;
+    this.imageWidth = 300;
+    this.imageOffset = 3.15;
+
 
     this.highlight = false;
 
@@ -32,12 +34,15 @@ function PipePair() {
 
 
     this.show = function() {
-        fill(255);
+        fill(127,255,0);
         if (this.highlight) {
             fill(255,0,0);
         }
+
         rect(this.x, 0, this.w, this.topPipe);
+        image(topPipeimg,this.x - (this.imageOffset*this.w), 0, this.imageWidth, this.topPipe);
         rect(this.x, height-this.bottom, this.w, this.bottom);
+        image(bottomPipeimg, this.x - (this.imageOffset* this.w), height-this.bottom, this.imageWidth, this.bottom);
 
     }
 
