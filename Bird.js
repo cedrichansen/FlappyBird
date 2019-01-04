@@ -2,7 +2,7 @@ function Bird (){
 
     this.y = height/2;
     this.x = 64;
-    this.radius = 32;
+    this.diameter = 32;
 
     this.gravity = 0.85;
     this.liftForce = -16;
@@ -10,7 +10,7 @@ function Bird (){
 
     this.show = function () {
         fill(255);
-        ellipse(this.x, this.y, 32, 32);
+        ellipse(this.x, this.y, this.diameter,this.diameter);
 
     }
 

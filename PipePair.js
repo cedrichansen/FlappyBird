@@ -16,14 +16,14 @@ function PipePair() {
     this.speed = 3.5;
     this.imageWidth = 275;
     this.imageOffset = 2.875;
-    this.yBuffer = 2.75;
+    this.yBuffer = 2.5;
 
 
     this.highlight = false;
 
     this.hits = function (bird) {
-        if (bird.y - (bird.radius/2) - this.yBuffer  < this.topPipe || bird.y + (bird.radius/2) + this.yBuffer > height - this.bottom) {
-            if (bird.x + (bird.radius/2) > this.x && bird.x - (bird.radius/2) < this.x + this.w) {
+        if (bird.y - (bird.diameter/2) - this.yBuffer  < this.topPipe || bird.y + (bird.diameter/2) + this.yBuffer > height - this.bottom) {
+            if (bird.x + (bird.diameter/2) > this.x && bird.x - (bird.diameter/2) < this.x + this.w) {
                 this.highlight = true;
                 return true;
             }
@@ -42,10 +42,11 @@ function PipePair() {
 
         //the rectangles are the objects being hit. The images are layed on top
         //of the rectangles for visuals
+        // the +2 just makes the pipe the right height
 
-        //rect(this.x, 0, this.w, this.topPipe);
-        image(topPipeimg,this.x - (this.imageOffset*this.w), 0, this.imageWidth, this.topPipe);
-        //rect(this.x, height-this.bottom, this.w, this.bottom);
+        rect(this.x, 0, this.w, this.topPipe);
+        image(topPipeimg,this.x - (this.imageOffset*this.w), 0, this.imageWidth, this.topPipe + 2);
+        rect(this.x, height-this.bottom, this.w, this.bottom);
         image(bottomPipeimg, this.x - (this.imageOffset* this.w), height-this.bottom, this.imageWidth, this.bottom);
 
     }
