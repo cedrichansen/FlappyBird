@@ -1,4 +1,8 @@
+var birdImg;
+
 function Bird (){
+
+    birdImg = loadImage("bird.png");
 
     this.y = height/2;
     this.x = 64;
@@ -11,7 +15,8 @@ function Bird (){
     this.show = function () {
         fill(255);
         ellipse(this.x, this.y, this.diameter,this.diameter);
-
+        //image(birdImg,this.x, this.y, this.diameter,this.diameter)
+        
     }
 
     this.up = function () {
