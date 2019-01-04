@@ -5,15 +5,15 @@ function PipePair() {
 
     topPipeimg = loadImage("topPipe.png");
     bottomPipeimg = loadImage("bottomPipe.png");
-    this.gap = 150;
+    this.gap = 125;
 
-    this.topPipe = 20 + random(height - 40  );
+    this.topPipe = 15 + random(height - this.gap + 15);
     this.bottom = height - this.topPipe - this.gap;
 
 
     this.x = width;
     this.w = 40;
-    this.speed = 3;
+    this.speed = 3.5;
     this.imageWidth = 300;
     this.imageOffset = 3.15;
 
@@ -21,8 +21,8 @@ function PipePair() {
     this.highlight = false;
 
     this.hits = function (bird) {
-        if (bird.y < this.topPipe || bird.y > height - this.bottom) {
-            if (bird.x > this.x && bird.x <this.x + this.w) {
+        if (bird.y< this.topPipe || bird.y > height - this.bottom) {
+            if (bird.x > this.x && bird.x< this.x + this.w) {
                 this.highlight = true;
                 return true;
             }

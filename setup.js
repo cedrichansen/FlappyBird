@@ -39,7 +39,7 @@ function draw() {
     }
     bird.show();
 
-    if (frameCount % 100 == 0 && !gameOver) {
+    if (frameCount % 70 == 0 && !gameOver) {
         pipes.push(new PipePair());
         score++;
         console.log(score);

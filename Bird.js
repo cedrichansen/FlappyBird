@@ -4,8 +4,8 @@ function Bird (){
     this.x = 64;
     this.radius = 32;
 
-    this.gravity = 0.7;
-    this.liftForce = -15;
+    this.gravity = 0.85;
+    this.liftForce = -16;
     this.velocity = 0;
 
     this.show = function () {
@@ -20,7 +20,7 @@ function Bird (){
 
     this.update = function () {
         this.velocity += this.gravity;
-        this.velocity *= 0.9;
+        this.velocity *= 0.925;
         this.y += this.velocity;
 
 
