@@ -11,6 +11,7 @@ function Bird (){
     this.show = function () {
         fill(255);
         ellipse(this.x, this.y, 32, 32);
+
     }
 
     this.up = function () {
