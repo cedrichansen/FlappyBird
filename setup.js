@@ -10,8 +10,8 @@ var canvasWidth = 400;
 var canvasHeight = 600;
 
 function setup() {
-    bg = loadImage("background.jpg");
     createCanvas(canvasWidth, canvasHeight);
+    bg = loadImage("background.jpg");
     bird = new Bird();
     pipes.push(new PipePair());
 }
@@ -38,6 +38,7 @@ function draw() {
                 restartGameButton.mousePressed(restartGame);
                 restartGameButton.position(canvasWidth/2 - 30, canvasHeight/2);
                 buttonLoaded = true;
+                noLoop();
             }
         }
     }
@@ -45,6 +46,7 @@ function draw() {
     if (!gameOver) {
         bird.update();
     }
+
     bird.show();
 
     if (frameCount % 70 == 0 && !gameOver) {
@@ -71,6 +73,7 @@ function restartGame() {
     bird = new Bird();
     restartGameButton.remove();
     buttonLoaded = false;
+    loop();
 
 }
 

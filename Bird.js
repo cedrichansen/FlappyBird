@@ -13,10 +13,10 @@ function Bird (){
     this.velocity = 0;
 
     this.show = function () {
+
         fill(255);
         ellipse(this.x, this.y, this.diameter,this.diameter);
-        //image(birdImg,this.x, this.y, this.diameter,this.diameter)
-        
+
     }
 
     this.up = function () {

@@ -7,7 +7,7 @@ function PipePair() {
     bottomPipeimg = loadImage("bottomPipe.png");
     this.gap = 125;
 
-    this.topPipe = 15 + random(height - this.gap + 15);
+    this.topPipe = 15 + random(height - this.gap -15);
     this.bottom = height - this.topPipe - this.gap;
 
 
@@ -44,9 +44,9 @@ function PipePair() {
         //of the rectangles for visuals
         // the +2 just makes the pipe the right height
 
-        rect(this.x, 0, this.w, this.topPipe);
+        //rect(this.x, 0, this.w, this.topPipe);
         image(topPipeimg,this.x - (this.imageOffset*this.w), 0, this.imageWidth, this.topPipe + 2);
-        rect(this.x, height-this.bottom, this.w, this.bottom);
+        //rect(this.x, height-this.bottom, this.w, this.bottom);
         image(bottomPipeimg, this.x - (this.imageOffset* this.w), height-this.bottom, this.imageWidth, this.bottom);
 
     }
